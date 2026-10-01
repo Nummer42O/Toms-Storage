@@ -161,7 +161,7 @@ public class Config {
 	}
 
 	private void load(ModConfig modConfig) {
-		if(modConfig.getType() == Type.SERVER) {
+		if(modConfig.getType() == Type.SYNCED) {
 			onlyTrims = SERVER.onlyTrimsConnect.get();
 			invConnectorScanRange = SERVER.invConnectorScanRange.get();
 			invConnectorCableRange = SERVER.invConnectorCableRange.get();
@@ -176,7 +176,7 @@ public class Config {
 			runMultithreaded = SERVER.runMultithreaded.getAsBoolean();
 			basicHopperCooldown = SERVER.basicHopperCooldown.get();
 			//inventoryConnectorMaxSlots = SERVER.inventoryConnectorMaxSlots.getAsInt();
-		} else if(modConfig.getType() == Type.COMMON) {
+		} else if(modConfig.getType() == Type.LOCAL) {
 			blockedMods = new HashSet<>(COMMON.blockedMods.get());
 
 			blockedBlocks = COMMON.blockedBlocks.get().stream().map(Identifier::tryParse).filter(e -> e != null).

@@ -44,8 +44,8 @@ public class StorageMod {
 		bus.addListener(this::registerCapabilities);
 		bus.addListener(this::enqueueIMC);
 
-		mc.registerConfig(ModConfig.Type.COMMON, Config.commonSpec);
-		mc.registerConfig(ModConfig.Type.SERVER, Config.serverSpec);
+		mc.registerConfig(ModConfig.Type.LOCAL, Config.commonSpec);
+		mc.registerConfig(ModConfig.Type.SYNCED, Config.serverSpec);
 		bus.register(Config.get());
 		bus.register(NetworkHandler.class);
 
